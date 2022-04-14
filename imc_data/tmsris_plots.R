@@ -3,7 +3,7 @@ index = sample(c(1:4051) ,1)
 plot(full_data_with_time[,index], main=paste('Sample', index))
 
 ### plot 2 : 요일별 시간당 전력사용량 평균
-##### data for plot
+###### data for plot
 data_plot<-aggregate(full_data_with_time[,-c(4052:4054)],by=list(full_data_with_time$dh),FUN=mean,na.rm=T)
 data_plot$day<-substr(data_plot$Group.1,1,3)
 data_plot$hour<-substr(data_plot$Group.1,4,5)
