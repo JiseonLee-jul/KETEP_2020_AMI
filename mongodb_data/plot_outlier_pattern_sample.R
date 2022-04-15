@@ -12,7 +12,6 @@ data <- complex2_long
 # data$사용량[which(data$사용량 > fivenum(data$사용량)[4] + 1.5*IQR(data$사용량))]=NA
 # boxplot(data$사용량)
 # summary(data$사용량)
-data$사용량=na.approx(data$사용량,na.rm=F)
 
 ### 시계열 데이터 그리기 위한 준비
 date=as.Date(ymd_hms(data$시간))
