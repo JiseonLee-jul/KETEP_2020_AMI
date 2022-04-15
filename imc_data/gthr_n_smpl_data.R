@@ -9,7 +9,7 @@ registerDoParallel(s.cluster)
 memory.limit(50000000000) ; gc()
 
 
-##################### load the data for NA counting #######################
+##################### load the data for NA counting ########################
 
 dir<-("C:\\Users\\LYJ_lab\\Desktop\\이지선\\에기평\\imcdata_v2")
 folder_list<-list.files(dir) ; folder_num<-length(folder_list)
