@@ -1,4 +1,4 @@
-########################### time point 생성 ##############################
+########################### 시계열 변수 생성 ##############################
 
 library(xts)
 library(reshape2)
@@ -37,24 +37,4 @@ save(full_data_with_time,file="C:\\Users\\이지선\\Desktop\\에기평\\샘플�
 full_data_with_time$day<-weekdays(as.Date(substr(rownames(full_data_with_time),1,10)))
 full_data_with_time$hour<-substr(rownames(full_data_with_time),12,13)
 full_data_with_time$dh<-paste(full_data_with_time$day,full_data_with_time$hour,sep="")
-
-### Outlier Detection
-### Quantile method
-# 1분위수 계산
-Q1<-Q3<-LC<-UC<-c() ; full_data_with_time2<-data.frame()
-
-for(i in 1:4051) {
-  Q1[i] = quantile(full_data_with_time[,i],probs = c(0.25),na.rm = TRUE) 
-  # 3분위수 계산
-  Q3[i] = quantile(full_data_with_time[,i],probs = c(0.75),na.rm = TRUE) 
-  
-  LC[i] = Q1[i] - 1.5 * (Q3[i] - Q1[i]) # 아래 울타리
-  UC[i] = Q3[i] + 1.5 * (Q3[i] - Q1[i]) # 위 울타리
-  
-  full_data_with_time2[,i] = subset(full_data_with_time,full_data_with_time[,i] >  LC[i] & full_data_with_time[,i] < UC[i])
-}
-
-### boxplot
-
-boxplot(full_data_with_time$V1)
 
