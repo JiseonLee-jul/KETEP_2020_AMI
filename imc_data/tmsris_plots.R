@@ -2,7 +2,7 @@
 index = sample(c(1:4051) ,1)  
 plot(full_data_with_time[,index], main=paste('Sample', index))
 
-### plot 2 : 요일별 시간당 전력사용량 평균
+
 ###### data for plot
 data_plot<-aggregate(full_data_with_time[,-c(4052:4054)],by=list(full_data_with_time$dh),FUN=mean,na.rm=T)
 data_plot$day<-substr(data_plot$Group.1,1,3)
@@ -12,7 +12,7 @@ temp<-apply(data_plot[,-c(1,4052:4054)],1,mean)
 data_plot2<-data.frame(day=data_plot$day,hour=data_plot$hour,value=temp)
 data_plot2$hour<-as.integer(data_plot2$hour)
 
-##### 
+##### plot 2 : 요일별 시간당 전력사용량 평균
 da<-c("월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일")
 color<-c("black", "green", "yellow", "blue", "orange", "pink", "red")
 
