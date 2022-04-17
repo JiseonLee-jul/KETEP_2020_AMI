@@ -40,7 +40,7 @@
 #### 목적
 - 주택용 전력 사용 가구의 전력사용량을 변수로 설정하여 가구를 분류
 - 일반적인 clsutering 방법을 적용 시 총 전력사용량만을 기준으로 가구가 분류되는 문제 해결
-<img src = "https://user-images.githubusercontent.com/102127170/163716650-a5636d54-feac-47e1-84e7-f70390ec6cf2.png" width = "700", height = "370">
+<img src="https://user-images.githubusercontent.com/102127170/163716650-a5636d54-feac-47e1-84e7-f70390ec6cf2.png" width="700" height="370">
 
 #### 방법
 1. first step
